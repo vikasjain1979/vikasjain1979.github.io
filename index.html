@@ -74,7 +74,7 @@ var isWebView = isiOSWebView || isAndroidWebView;
 
    // load Branch
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
-	  branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
+	  branch.init('key_live_ad15FZv8RmTgyi9qm8aMjgdkuvmHT1Pj');
 // if (isWebView) {
 // 		  // init Branch
 // 	  branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z',  { 'no_journeys': true } );
@@ -203,6 +203,7 @@ function myFunction() {
 		<input type="text" id="track" name="track" maxlength="16">
 <div>
 <!-- 	<img src="ap_qrcode.jpeg" height="10" width="10"/>  -->
+	<p>Page with SS Key</p>
 	<button onclick="sendMessage('https://branchexplore.test-app.link/VqnpqpRfUpb')"> Track Parcel </button> 
 </n>
      <a href="branchexplore://test">Open Branch Explore using URI Scheme</a><br>
