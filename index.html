@@ -159,7 +159,29 @@ function(err) { console.log(err); }
 <body>
 <!-- Simulate a smartphone / tablet -->
 <!-- <div class="mobile-container"> -->
+<h1>Index Page Links 09/10 - v1.0</h1>
+    <div class="button-container">
+    
+    <a href="https://www.google.com" class="button">DeepLink for Android</a>
+    <a href="https://www.coles.com.au/catalogues?CID=COL_EDM_PRO_MON_PLANNER_20251006_GENERIC_Catalogue_Header_CTA&emid=ece9e1d3ee09715802b252fe0dae86381831aa08f0e59362980a6ea50c0c14f8" class="button" id="iosButton">Coles App</a>
+  </div> 
 
+<script>
+
+    // window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
+  // Find the button element by its ID. Replace 'myButton' with the actual ID.
+      const myButton = document.getElementById('iosButton');
+    
+  // Check if the button element exists before trying to click it
+  if (myButton) {
+       //alert("Button Click")
+        myButton.click();
+  }
+});
+</script>
+
+	
 <!-- Top Navigation Menu -->
 <div class="topnav">
 	<div class="branch-journeys-top"></div>
