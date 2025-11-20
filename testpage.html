@@ -74,7 +74,14 @@ var isWebView = isiOSWebView || isAndroidWebView;
 
    // load Branch
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
-	  branch.init('key_test_hfHUXBWQIDXvMWkGodTLmfgauujVlxn1');
+	  //EDR Test App
+	  //branch.init('key_test_hfHUXBWQIDXvMWkGodTLmfgauujVlxn1'); 
+	  
+	  //Branch Explore Test App
+	  branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z'); 
+	  
+	  
+	  
 
 
 branch.logEvent(
@@ -164,11 +171,29 @@ function(err) { console.log(err); }
 </div>
 
 <!-- <a href="https://branchexplore.test-app.link/VqnpqpRfUpb"> In App Link </a></br> -->
-
+<h1> Test Links 20/11 - 1.1 </h1>
+    <div class="button-container">
+    
+    <a href="https://www.google.com" class="button">DeepLink for Android</a>
+    <a href="https://branchexplore.test-app.link/ARWY6c66TRb" class="button" id="iosButton">IOS Button Link</a>
+  </div> 
 <!-- End smartphone / tablet look -->
 </div>
 
 <script>
+
+	    // window.onload = function() {
+    document.addEventListener('DOMContentLoaded', function() {
+  // Find the button element by its ID. Replace 'myButton' with the actual ID.
+      const myButton = document.getElementById('iosButton');
+    
+  // Check if the button element exists before trying to click it
+  if (myButton) {
+       //alert("Button Click")
+        myButton.click();
+  }
+});
+	
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
@@ -185,7 +210,7 @@ function myFunction() {
 		<input type="text" id="track" name="track" maxlength="16">
 <div>
 <!-- 	<img src="ap_qrcode.jpeg" height="10" width="10"/>  -->
-	<p>Page with Rewards Test App Key</p>
+	<p>Page with BE Test App Key</p>
 	<!-- <button onclick="sendMessage('https://branchexplore.test-app.link/VqnpqpRfUpb')"> Track Parcel </button> 
 </n>
      <a href="branchexplore://test">Open Branch Explore using URI Scheme</a><br>
