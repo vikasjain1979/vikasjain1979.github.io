@@ -40,7 +40,7 @@
 
   
 <body>
-<h1> Links Test 20/11 - 1.1 </h1>
+<h1> Links Test 20/11 - 1.2 </h1>
     <div class="button-container">
       <a href="https://www.google.com" class="button">DeepLink for Android</a>
       <a href="https://branchexplore.test-app.link/9YYTrnIsJCb" class="button" id="iosButton">Coles App</a>
@@ -61,9 +61,18 @@
   function openUriScheme(uri) {
   // Set the window location to the custom URI scheme
   window.location.href = uri;
+
+    const loadTimeout = setTimeout(function() {
+    // If the browser hasn't navigated away, the app likely isn't installed.
+    // Logic here might be to redirect the user to the App Store or Play Store.
+    console.log("App did not launch or timed out. Consider redirection.");
+      window.location.href = webPath;
+    // Example: window.location.href = 'https://appstore.com/yourapp';
+  }, 500);
 }
   
 const appScheme = "branchexplore://path/to/content?id=123";
+const webPath = "https://help.branch.io/";
   
 </script>
 
