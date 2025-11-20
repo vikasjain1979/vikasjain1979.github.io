@@ -48,14 +48,21 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Find the button element by its ID. Replace 'myButton' with the actual ID.
-      const myButton = document.getElementById('iosButton');
+      openurischeme(branchexplore://);
+  //     // Find the button element by its ID. Replace 'myButton' with the actual ID.
+  //     const myButton = document.getElementById('iosButton');
     
-      // Check if the button element exists before trying to click it
-      if (myButton) {
-        myButton.click();
-      }
+  //     // Check if the button element exists before trying to click it
+  //     if (myButton) {
+  //       myButton.click();
+  //     }
   });
+
+  function openUriScheme(uri) {
+  // Set the window location to the custom URI scheme
+  window.location.href = uri;
+}
+
   
 </script>
 
