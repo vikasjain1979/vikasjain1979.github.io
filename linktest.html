@@ -40,7 +40,7 @@
 
   
 <body>
-<h1> Links Test 20/11 - 1.0 </h1>
+<h1> Links Test 20/11 - 1.1 </h1>
     <div class="button-container">
       <a href="https://www.google.com" class="button">DeepLink for Android</a>
       <a href="https://branchexplore.test-app.link/9YYTrnIsJCb" class="button" id="iosButton">Coles App</a>
@@ -48,7 +48,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      openUriScheme(branchexplore://);
+      openUriScheme(appScheme);
   //     // Find the button element by its ID. Replace 'myButton' with the actual ID.
   //     const myButton = document.getElementById('iosButton');
     
@@ -62,7 +62,8 @@
   // Set the window location to the custom URI scheme
   window.location.href = uri;
 }
-
+  
+const appScheme = "branchexplore://path/to/content?id=123";
   
 </script>
 
