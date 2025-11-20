@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Links 19/11 - 1.0 </title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: white;
+      background-color: #007BFF;
+      border: 1px solid #007BFF;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+  
+<body>
+<h1> Links Test 20/11 - 1.0 </h1>
+    <div class="button-container">
+      <a href="https://www.google.com" class="button">DeepLink for Android</a>
+      <a href="https://branchexplore.test-app.link/9YYTrnIsJCb" class="button" id="iosButton">Coles App</a>
+  </div> 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Find the button element by its ID. Replace 'myButton' with the actual ID.
+      const myButton = document.getElementById('iosButton');
+    
+      // Check if the button element exists before trying to click it
+      if (myButton) {
+        myButton.click();
+      }
+  });
+  
+</script>
+
+</body>
+</html>
