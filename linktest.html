@@ -40,15 +40,25 @@
 
   
 <body>
-<h1> Links Test 20/11 - 1.2 </h1>
+<h1> Links Test 24/11 - 1.3 </h1>
     <div class="button-container">
       <a href="https://www.google.com" class="button">DeepLink for Android</a>
       <a href="https://branchexplore.test-app.link/9YYTrnIsJCb" class="button" id="iosButton">Coles App</a>
   </div> 
 
 <script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const appScheme = "branchexplore://";
+    const webPath = "https://help.branch.io/";
+
+    const deeplinkPath = urlParams.has('$deeplink_path') ? urlParams.get('$deeplink_path') : appScheme;
+    const fallbackUrl = urlParams.has('$fallback_Url') ? urlParams.get('$fallback_Url') : webPath;
+  
     document.addEventListener('DOMContentLoaded', function() {
-      openUriScheme(appScheme);
+   
+    
+      openUriScheme(deeplinkPath, fallbackUrl);
   //     // Find the button element by its ID. Replace 'myButton' with the actual ID.
   //     const myButton = document.getElementById('iosButton');
     
@@ -58,7 +68,7 @@
   //     }
   });
 
-  function openUriScheme(uri) {
+  function openUriScheme(uri, fallback) {
   // Set the window location to the custom URI scheme
   window.location.href = uri;
 
@@ -66,13 +76,11 @@
     // If the browser hasn't navigated away, the app likely isn't installed.
     // Logic here might be to redirect the user to the App Store or Play Store.
     console.log("App did not launch or timed out. Consider redirection.");
-      window.location.href = webPath;
+      window.location.href = fallback;
     // Example: window.location.href = 'https://appstore.com/yourapp';
   }, 500);
 }
   
-const appScheme = "branchexplore://path/to/content?id=123";
-const webPath = "https://help.branch.io/";
   
 </script>
 
