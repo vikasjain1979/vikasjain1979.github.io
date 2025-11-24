@@ -40,7 +40,7 @@
 
   
 <body>
-<h1> Links Test 24/11 - 1.4 </h1>
+<h1> Links Test 24/11 - 1.5 </h1>
     <div class="button-container">
       <a href="https://www.google.com" class="button">DeepLink for Android</a>
       <a href="https://branchexplore.test-app.link/9YYTrnIsJCb" class="button" id="iosButton">Coles App</a>
@@ -51,12 +51,11 @@
 
     const appScheme = "branchexplore://";
     const webPath = "https://help.branch.io/";
-    alert(urlParams)
+  
     const deeplinkPath = urlParams.has('$deeplink_path') ? urlParams.get('$deeplink_path') : appScheme;
     const fallbackUrl = urlParams.has('$fallback_url') ? urlParams.get('$fallback_url') : webPath;
-    alert(deeplinkPath)
-    alert(fallbackUrl)
-    document.addEventListener('DOMContentLoaded', function() {    
+    
+  document.addEventListener('DOMContentLoaded', function() {    
       openUriScheme(deeplinkPath, fallbackUrl);
   });
 
