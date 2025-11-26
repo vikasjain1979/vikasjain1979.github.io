@@ -28,6 +28,33 @@
   branch.setBranchViewData(linkData);
 	//branch.setBranchViewData({data: { param1:'fbclid123',
 		//							param2: 'gclid123'} });
+
+
+	  function generateBranchLink() {
+		  alert('Generate Link');
+		  var linkData = {
+		  campaign: 'content 123',
+ 		  channel: 'facebook',
+  		  feature: 'dashboard',
+		  stage: 'new user',
+		  tags: [ 'tag1', 'tag2', 'tag3' ],
+		  alias: '',
+		  data: {
+		    'custom_bool': true,
+		    'custom_int': Date.now(),
+		    'custom_string': 'hello',
+		    '$og_title': 'Title',
+		    '$og_description': 'Description',
+		    '$og_image_url':'http://lorempixel.com/400/400'
+		  }
+		};
+
+	branch.link(linkData, function(err, link) {
+  		alert(link)
+		// Show Share Sheet
+		console.log(link);
+	});
+}
 	
 	</script>
 </head>
@@ -35,7 +62,7 @@
 <h1>Branch Referral Flow on Web - v2611.1.0 </h1>
 
 <div class="button-container">    
-    <a href="https://www.google.com" class="button">Refer a Friend</a>
+	<button onclick="generateBranchLink()">Refer a Friend</button>
 </div> 
 
 /* Share CTA 
