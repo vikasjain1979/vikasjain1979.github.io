@@ -63,7 +63,7 @@ function triggerNativeShare(urlToShare) {
         window.webkit.messageHandlers.shareHandler.postMessage({
             "action": "share",
             "url": urlToShare,
-            "title": document.title
+            "title": "Native Share"
         });
         
     } else {
@@ -73,7 +73,7 @@ function triggerNativeShare(urlToShare) {
         // Optionally use the Web Share API as a fallback for Safari/Chrome on iOS
         if (navigator.share) {
             navigator.share({
-                title: document.title,
+                title: "Web Share",
                 url: urlToShare
             });
         }
