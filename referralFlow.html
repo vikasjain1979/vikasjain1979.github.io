@@ -50,16 +50,39 @@
 		};
 
 	branch.link(linkData, function(err, link) {
-  		alert(link)
-		// Show Share Sheet
-		console.log(link);
+		triggerNativeShare(link)
 	});
 }
-	
+
+function triggerNativeShare(urlToShare) {
+	alert('Invoking share sheet on native');
+    // 1. Check if the native message handler exists (only true inside your WKWebView)
+    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.shareHandler) {
+        
+        // 2. Post the message, sending the data as a JSON object
+        window.webkit.messageHandlers.shareHandler.postMessage({
+            "action": "share",
+            "url": urlToShare,
+            "title": document.title
+        });
+        
+    } else {
+        // Fallback for when the page is viewed outside the native app (e.g., in Safari)
+        console.log("Native share handler not found. Falling back to web share API or clipboard.");
+        
+        // Optionally use the Web Share API as a fallback for Safari/Chrome on iOS
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                url: urlToShare
+            });
+        }
+    }
+}
 	</script>
 </head>
 <body>
-<h1>Branch Referral Flow on Web - v2611.1.0 </h1>
+<h1>Branch Referral Flow on Web - v2611.1.1 </h1>
 
 <div class="button-container">    
 	<button onclick="generateBranchLink()">Refer a Friend</button>
