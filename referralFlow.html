@@ -56,6 +56,9 @@
 
 	function triggerNativeShare(urlToShare) {
 		alert("Invoking share sheet on native");
+
+		Android.showToast(urlToShare);
+		
 	    // 1. Check if the native message handler exists (only true inside your WKWebView)
 	    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.nativeProcess) {
 	        
