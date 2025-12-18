@@ -97,6 +97,25 @@
             }
             lastScrollY = window.scrollY;
         });
+
+    function adjustIframeMargin() {
+        const adBar = document.getElementById('adBar');
+        const navBar = document.getElementById('navBar');
+        
+        var iframe = document.getElementById('branch-banner-iframe');
+
+        if (navBar && iframe) {
+            // Measure the actual height of the element on screen
+            const elementHeight = navBar.offsetHeight;
+        
+            // Apply that height as a margin to the iframe
+            iframe.style.marginBottom = elementHeight + "px";
+        }
+    }
+
+// Run on load and whenever the window is resized
+window.addEventListener('load', adjustIframeMargin);
+window.addEventListener('resize', adjustIframeMargin);
     </script>
 
 </body>
