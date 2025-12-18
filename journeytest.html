@@ -105,10 +105,13 @@
         var iframe = document.getElementById('branch-banner-iframe');
         var div = document.getElementById('branch-banner');
 
+        
         if (navBar && div) {
             // Measure the actual height of the element on screen
-            const elementHeight = navBar.offsetHeight;
-        
+            const elementHeight = navBar.offsetHeight + adBar.offsetHeight;
+            alert('Element height ' + elementHeight);    
+            alert('navBar.offsetHeight ' + navBar.offsetHeight);    
+            alert('Adbar height ' + adBar.offsetHeight);    
             // Apply that height as a margin to the iframe
             div.style.marginBottom = elementHeight + "px";
         }
