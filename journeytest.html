@@ -84,42 +84,45 @@
         let lastScrollY = window.scrollY;
         const adBar = document.getElementById('adBar');
         const navBar = document.getElementById('navBar');
+        var div = document.getElementById('branch-banner');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling Down - Add the hidden class
                 adBar.classList.add('nav-hidden');
                 navBar.classList.add('nav-hidden');
+                div.classList.add('nav-hidden');
             } else {
                 // Scrolling Up - Remove the hidden class
                 adBar.classList.remove('nav-hidden');
                 navBar.classList.remove('nav-hidden');
+                div.classList.remove('nav-hidden');
             }
             lastScrollY = window.scrollY;
         });
 
-    function adjustIframeMargin() {
-        const adBar = document.getElementById('adBar');
-        const navBar = document.getElementById('navBar');
+//     function adjustIframeMargin() {
+//         const adBar = document.getElementById('adBar');
+//         const navBar = document.getElementById('navBar');
         
-        var iframe = document.getElementById('branch-banner-iframe');
-        var div = document.getElementById('branch-banner');
-
+//         var iframe = document.getElementById('branch-banner-iframe');
+//         var div = document.getElementById('branch-banner');
+//         alert(div);
         
-        if (navBar && div) {
-            // Measure the actual height of the element on screen
-            const elementHeight = navBar.offsetHeight + adBar.offsetHeight;
-            alert('Element height ' + elementHeight);    
-            alert('navBar.offsetHeight ' + navBar.offsetHeight);    
-            alert('Adbar height ' + adBar.offsetHeight);    
-            // Apply that height as a margin to the iframe
-            div.style.marginBottom = elementHeight + "px";
-        }
-    }
+//         if (navBar && div) {
+//             // Measure the actual height of the element on screen
+//             const elementHeight = navBar.offsetHeight + adBar.offsetHeight;
+//             alert('Element height ' + elementHeight);    
+//             alert('navBar.offsetHeight ' + navBar.offsetHeight);    
+//             alert('Adbar height ' + adBar.offsetHeight);    
+//             // Apply that height as a margin to the iframe
+//             div.style.marginBottom = elementHeight + "px";
+//         }
+//     }
 
-// Run on load and whenever the window is resized
-window.addEventListener('load', adjustIframeMargin);
-window.addEventListener('resize', adjustIframeMargin);
+// // Run on load and whenever the window is resized
+// window.addEventListener('load', adjustIframeMargin);
+// window.addEventListener('resize', adjustIframeMargin);
     </script>
 
 </body>
