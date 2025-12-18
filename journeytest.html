@@ -84,19 +84,22 @@
         let lastScrollY = window.scrollY;
         const adBar = document.getElementById('adBar');
         const navBar = document.getElementById('navBar');
-        var iFrame = document.getElementById('branch-banner-iframe');
-
+        const myFrame = document.getElementById('branch-banner-iframe');
+        const ifr = document.querySelector('[title="Branch Banner Frame"]');
+        
+        myFrame.contentWindow.postMessage({ action: 'addClass', className: 'nav-hidden' }, 'https://the-other-domain.com');
+        
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling Down - Add the hidden class
                 adBar.classList.add('nav-hidden');
                 navBar.classList.add('nav-hidden');
-                iFrame.classList.add('nav-hidden');
+                ifr.classList.add('nav-hidden');
             } else {
                 // Scrolling Up - Remove the hidden class
                 adBar.classList.remove('nav-hidden');
                 navBar.classList.remove('nav-hidden');
-                iFrame.classList.remove('nav-hidden');
+                ifr.classList.remove('nav-hidden');
             }
             lastScrollY = window.scrollY;
         });
