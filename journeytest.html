@@ -109,6 +109,17 @@
         .nav-hidden {
             transform: translateY(60px); 
         }
+
+    /* Styling the "backdrop" (the area behind the popup) */
+    dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    dialog {
+        border: none;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
     </style>
     <script>
         // load Branch
@@ -149,6 +160,14 @@
         <a href="#account" onclick="alert('Account Clicked')">Account</a>
     </nav>
 
+    <!-- <button onclick="document.getElementById('myPopup').showModal()">Open Popup</button> -->
+
+<dialog id="myPopup">
+    <h2>Hello!</h2>
+    <p>This is a modern HTML5 popup.</p>
+    <button onclick="document.getElementById('myPopup').close()">Close</button>
+</dialog>
+    
     <script>
         let lastScrollY = window.scrollY;
         const adBar = document.getElementById('adBar');
@@ -156,7 +175,7 @@
         
         window.addEventListener('scroll', () => {
             // const myFrame = document.getElementById('branch-banner-iframe');
-        
+            document.getElementById('myPopup').showModal()
             if (window.scrollY > lastScrollY) {
                 // Scrolling Down - Add the hidden class
                 adBar.classList.add('nav-hidden');
@@ -170,7 +189,7 @@
             }
             lastScrollY = window.scrollY;
         });
-
+        
         function openNav() {
             document.getElementById("myNav").style.width = "100%";
         }
