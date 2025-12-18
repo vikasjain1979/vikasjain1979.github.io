@@ -84,10 +84,11 @@
         let lastScrollY = window.scrollY;
         const adBar = document.getElementById('adBar');
         const navBar = document.getElementById('navBar');
-        const myFrame = document.getElementById('branch-banner-iframe');
-        alert(myFrame);
         
         window.addEventListener('scroll', () => {
+            const myFrame = document.getElementById('branch-banner-iframe');
+            alert(myFrame);
+        
             if (window.scrollY > lastScrollY) {
                 // Scrolling Down - Add the hidden class
                 adBar.classList.add('nav-hidden');
