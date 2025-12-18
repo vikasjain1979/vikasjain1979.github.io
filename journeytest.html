@@ -84,19 +84,19 @@
         let lastScrollY = window.scrollY;
         const adBar = document.getElementById('adBar');
         const navBar = document.getElementById('navBar');
-        var div = document.getElementById('branch-banner');
+        var iFrame = document.getElementById('branch-banner-iframe');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling Down - Add the hidden class
                 adBar.classList.add('nav-hidden');
                 navBar.classList.add('nav-hidden');
-                div.classList.add('nav-hidden');
+                iFrame.classList.add('nav-hidden');
             } else {
                 // Scrolling Up - Remove the hidden class
                 adBar.classList.remove('nav-hidden');
                 navBar.classList.remove('nav-hidden');
-                div.classList.remove('nav-hidden');
+                iFrame.classList.remove('nav-hidden');
             }
             lastScrollY = window.scrollY;
         });
