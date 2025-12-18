@@ -11,6 +11,64 @@
             padding-bottom: 130px; /* Space for the bars */
         }
 
+        /* --- HAMBURGER ICON --- */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000; /* Must be above the overlay */
+            cursor: pointer;
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* --- OVERLAY MENU --- */
+        .overlay {
+            height: 100%;
+            width: 0; /* Starts at zero width (hidden) */
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent black */
+            overflow-x: hidden;
+            transition: 0.5s; /* Smooth slide effect */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .overlay a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover {
+            color: #f1f1f1;
+            transform: scale(1.1);
+        }
+
+        /* Close Button inside Overlay */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px !important;
+            cursor: pointer;
+        }
         .content { padding: 20px; }
 
         /* --- SHARED STYLES FOR BARS --- */
@@ -69,13 +127,24 @@
         <div style="height: 2000px; background: linear-gradient(#f9f9f9, #ccc);"></div>
     </div>
 
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        
+        <div class="overlay-content">
+            <a href="#" onclick="closeNav()">Home</a>
+            <a href="#" onclick="closeNav()">Services</a>
+            <a href="#" onclick="closeNav()">Portfolio</a>
+            <a href="#" onclick="closeNav()">Contact</a>
+        </div>
+    </div>
+
     <div id="adBar" class="fixed-footer ad-placement">
         <span>ADVERTISEMENT SPACE</span>
         <a href="#ad" onclick="alert('Ad Clicked')">ad</a>
     </div>
 
     <nav id="navBar" class="fixed-footer bottom-nav">
-        <a href="#home" onclick="alert('Home Clicked')">Home</a>
+        <a href="#home" onclick="openNav()">Home</a>
         <a href="#search" onclick="alert('Search Clicked')">Search</a>
         <a href="#account" onclick="alert('Account Clicked')">Account</a>
     </nav>
@@ -102,28 +171,13 @@
             lastScrollY = window.scrollY;
         });
 
-//     function adjustIframeMargin() {
-//         const adBar = document.getElementById('adBar');
-//         const navBar = document.getElementById('navBar');
-        
-//         var iframe = document.getElementById('branch-banner-iframe');
-//         var div = document.getElementById('branch-banner');
-//         alert(div);
-        
-//         if (navBar && div) {
-//             // Measure the actual height of the element on screen
-//             const elementHeight = navBar.offsetHeight + adBar.offsetHeight;
-//             alert('Element height ' + elementHeight);    
-//             alert('navBar.offsetHeight ' + navBar.offsetHeight);    
-//             alert('Adbar height ' + adBar.offsetHeight);    
-//             // Apply that height as a margin to the iframe
-//             div.style.marginBottom = elementHeight + "px";
-//         }
-//     }
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
 
-// // Run on load and whenever the window is resized
-// window.addEventListener('load', adjustIframeMargin);
-// window.addEventListener('resize', adjustIframeMargin);
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
     </script>
 
 </body>
