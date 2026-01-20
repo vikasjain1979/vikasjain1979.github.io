@@ -81,6 +81,12 @@
         
         // init Branch
         branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S');
+
+        var listener = function(event, data) { 
+            alert(event); 
+        } 
+        
+        branch.addListener('willShowJourney', listener);
     </script>
 </head>
 <body>
@@ -88,7 +94,7 @@
     <header class="top-nav">Page Title</header>
 
     <main>
-        <h2>Your Content v1.0</h2>
+        <h2>Your Content v1.1</h2>
         <p>This bar at the bottom is designed for mobile ergonomics (the "Thumb Zone").</p>
         <div style="height: 2000px; background: linear-gradient(#f8fafc, #cbd5e1);">
             Scroll down to test stickiness...
