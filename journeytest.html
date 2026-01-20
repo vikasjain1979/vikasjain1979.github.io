@@ -71,6 +71,8 @@
 
         .branch-journeys-top {
             height: 76px;
+            top: 0;
+            position: fixed;
         }
 
         main { padding: 1rem; line-height: 1.5; }
@@ -88,7 +90,7 @@
             const spacerDiv = document.getElementById('bannerTopSpacer');
 
             // Remove the specific CSS class
-            spacerDiv.classList.remove('branch-journeys-top');
+            // spacerDiv.classList.remove('branch-journeys-top');
         } 
         
         branch.addListener('willShowJourney', listener);
