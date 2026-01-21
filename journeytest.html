@@ -98,17 +98,17 @@
 
             // Find the div by its ID
             const spacerDiv = document.getElementById('bannerTopSpacer');
+            const banner = document.getElementById('branch-banner-iframe');
 
-            // Remove the specific CSS class
-            document.body.classList.toggle('shifted');
-            // spacerDiv.classList.remove('branch-journeys-top');
+            //spacerDiv.classList.remove('branch-journeys-top');
+            spacerDiv.appendChild(banner);
         } 
         
         branch.addListener('willShowJourney', listener);
     </script>
 </head>
 <body>
-    <!--div id="bannerTopSpacer" class="top-spacer">a</div-->
+    <div id="bannerTopSpacer" class="top-spacer">a</div>
     <header class="top-nav">Page Title</header>
 
     <main>
