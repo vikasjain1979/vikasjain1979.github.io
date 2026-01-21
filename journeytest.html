@@ -83,6 +83,7 @@
             line-height: 1.5; 
             position: relative;
             top: 100px;
+            z-index: 10;
         }
     </style>
     <script>
@@ -115,7 +116,7 @@
             spacerDiv.style.visibility = 'hidden';
             spacerDiv.style.height = 0;
             topNav.style.top = 0;
-            main.style.top = 0;
+            mainClass.style.top = 0;
         } 
 
         var willCloseJourneyListener = function(event, data) { 
@@ -132,7 +133,7 @@
                 spacerDiv.style.visibility = 'hidden';
                 spacerDiv.style.height = 0;
                 topNav.style.top = 0;
-                main.style.top = 0;
+                mainClass.style.top = 0;
             }
         } 
 
