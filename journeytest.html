@@ -24,7 +24,7 @@
         /* Top Bar */
         .top-nav {
             position: sticky;
-            top: 76px;
+            top:76px;
             background: var(--primary);
             color: white;
             padding: 1rem;
@@ -105,8 +105,10 @@
 
             // Find the div by its ID
             const spacerDiv = document.getElementById('bannerTopSpacer');
-            spacerDiv.style.visibility = hidden;
+            const topNav = document.querySelector('.top-nav');
+            spacerDiv.style.visibility = 'hidden';
             spacerDiv.style.height = 0;
+            topNav.style.top = 0;
         } 
 
         var willCloseJourneyListener = function(event, data) { 
@@ -114,12 +116,14 @@
             // Find the div by its ID
             const spacerDiv = document.getElementById('bannerTopSpacer');
             const banner = document.getElementById('branch-banner-iframe');
-
+            const topNav = document.querySelector('.top-nav');
+            
             //spacerDiv.classList.remove('branch-journeys-top');
-            if (!spacerDiv.contains(banner)) {
+            if (spacerDiv.contains(banner)) {
                 spacerDiv.removeChild(banner);    
                 spacerDiv.style.visibility = hidden;
                 spacerDiv.style.height = 0;
+                topNav.style.top = 0;
             }
         } 
 
@@ -133,7 +137,7 @@
     <header class="top-nav">Page Title</header>
 
     <main>
-        <h2>Your Content v1.7</h2>
+        <h2>Your Content v1.8</h2>
         <p>This bar at the bottom is designed for mobile ergonomics (the "Thumb Zone").</p>
         <div style="height: 2000px; background: linear-gradient(#f8fafc, #cbd5e1);">
             Scroll down to test stickiness...
