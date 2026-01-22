@@ -93,47 +93,46 @@
         // init Branch
         branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S');
 
+        // Listener to be called when journey banner is about to be shown
         var willShowJourneyListener = function(event, data) { 
 
             // Find the div by its ID
             const spacerDiv = document.getElementById('bannerTopSpacer');
             const banner = document.getElementById('branch-banner-iframe');
-
-            //spacerDiv.classList.remove('branch-journeys-top');
+            
+            // Add the banner to spacer div and set the banner visibility to visible
             if (!spacerDiv.contains(banner)) {
                 spacerDiv.appendChild(banner);    
                 banner.style.visibility = 'visible';
             }
         } 
 
-
+        // Listener to be called when journey banner will not be shown
         var willNotShowJourneyListener = function(event, data) { 
 
             // Find the div by its ID
             const spacerDiv = document.getElementById('bannerTopSpacer');
             const topNav = document.querySelector('.top-nav');
-             const mainClass = document.querySelector('.main');
+            
             spacerDiv.style.visibility = 'hidden';
             spacerDiv.style.height = 0;
             topNav.style.top = 0;
-            mainClass.style.top = 0;
         } 
 
+        // Listener to be called when journey banner will be closed
         var willCloseJourneyListener = function(event, data) { 
 
             // Find the div by its ID
             const spacerDiv = document.getElementById('bannerTopSpacer');
             const banner = document.getElementById('branch-banner-iframe');
             const topNav = document.querySelector('.top-nav');
-            const mainClass = document.querySelector('.main');
-            
-            //spacerDiv.classList.remove('branch-journeys-top');
+
+            //Remove the banner from spacer div and move the top nav
             if (spacerDiv.contains(banner)) {
                 spacerDiv.removeChild(banner);    
                 spacerDiv.style.visibility = 'hidden';
                 spacerDiv.style.height = 0;
                 topNav.style.top = 0;
-                mainClass.style.top = 0;
             }
         } 
 
