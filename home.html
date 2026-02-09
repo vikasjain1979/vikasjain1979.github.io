@@ -7,13 +7,11 @@
   
     // load Branch
     (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode setRequestMetaData setAPIUrl getAPIUrl setDMAParamsForEEA".split(" "), 0);
-	var pageUrl = new URL(window.location.href);
-	  alert(pageUrl);
-	  
-	branch.setRequestMetadata("pageUrl",pageUrl);
+	
+	branch.setRequestMetadata("pageUrl","home.html");
     // init Branch
     branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S');
-	  
+	
     var utmcampaign = new URL(window.location.href).searchParams.get("utm_campaign");
     var utmmedium = new URL(window.location.href).searchParams.get("utm_medium");
     var utmsource = new URL(window.location.href).searchParams.get("utm_source");
@@ -24,7 +22,7 @@ var linkData = {
   channel: 'facebook',
   feature: 'dashboard',
   stage: 'new user',
-  tags: [ 'tag1', 'tag2', 'tag3' ],
+  tags: [ 'home.html' ],
   alias: '',
   data: {
 	'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true&custom_string=hello&custom_int=1234'
