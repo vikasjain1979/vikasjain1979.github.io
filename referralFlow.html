@@ -8,30 +8,15 @@
     // load Branch
     (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
     // init Branch
-    branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S');
+    // branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S');
+	// branch.setBranchViewData({~channel: window.location.href});
 	  
-  
-    //branch.setBranchViewData({data: {'$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true' }});
-  var linkData = {
-    campaign: 'content 123',
-    channel: 'facebook',
-    feature: 'dashboard',
-    stage: 'new user',
-    tags: [ 'tag1', 'tag2', 'tag3' ],
-    alias: '',
-    data: {
-	  '$journeys_cta': 'https://branchexplore.test-app.link/ARWY6c66TRb?~channel='+ utmmedium +'&~campaign='+ utmcampaign +'&~feature='+ utmsource + '&$deeplink_no_attribution=true&custom_string=hello&custom_int=1234'
-    }
-  };
-
-  // Set Branch Deep Link data dynamically for a given mobile web Journey
-	  branch.setBranchViewData({
+  branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S', options, function(err, data) {
+  // Set view data for Journey
+  branch.setBranchViewData({
     channel: window.location.href
-  		});
-  // branch.setBranchViewData(linkData);
-	//branch.setBranchViewData({data: { param1:'fbclid123',
-		//							param2: 'gclid123'} });
-
+  });
+});
 
 	  function generateBranchLink() {
 		  alert('Generate Link');
@@ -89,7 +74,7 @@
 	</script>
 </head>
 <body>
-<h1>Branch Referral Flow on Web - v1102.1.0 </h1>
+<h1>Branch Referral Flow on Web - v1102.1.1 </h1>
 
 <div class="button-container">    
 	<button onclick="generateBranchLink()">Refer a Friend</button>
