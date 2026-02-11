@@ -25,7 +25,10 @@
   };
 
   // Set Branch Deep Link data dynamically for a given mobile web Journey
-  branch.setBranchViewData(linkData);
+	  branch.setBranchViewData({
+    channel: window.location.href
+  		});
+  // branch.setBranchViewData(linkData);
 	//branch.setBranchViewData({data: { param1:'fbclid123',
 		//							param2: 'gclid123'} });
 
@@ -86,7 +89,7 @@
 	</script>
 </head>
 <body>
-<h1>Branch Referral Flow on Web - v2711.1.0 </h1>
+<h1>Branch Referral Flow on Web - v1102.1.0 </h1>
 
 <div class="button-container">    
 	<button onclick="generateBranchLink()">Refer a Friend</button>
