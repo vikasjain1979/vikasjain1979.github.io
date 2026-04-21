@@ -74,7 +74,7 @@ var linkData = {
 	  }
 
 function showBanner() {
-	branch.track('pageview', {'delay': '10'});
+	branch.track('pageview');
 }
 
 // Set Branch Deep Link data dynamically for a given mobile web Journey
@@ -85,7 +85,7 @@ branch.setBranchViewData(linkData);
 	</script>
 </head>
 <body>
-<h1>Test Journey Attribution 21-04-26 | 1.1</h1>
+<h1>Test Journey Attribution 21-04-26 | 1.2</h1>
 <p>GitHub Pages.</p>
 	  <a href="targetaustraliaapp://open?id=123">Open Target Android App</a>
 		<a href="targetaustralia://open?id=123">Open Target IOS App</a>
