@@ -17,25 +17,9 @@ var isWebView = isiOSWebView || isAndroidWebView;
 	
 	branch.setRequestMetaData("metakey","test value");
     // init Branch
-    branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S');
+    branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S',  { 'no_journeys': true });
 
-	  setTimeout(function () {
-branch.closeJourney(function (err, data) {
-if (err) {
-console.log(err, data);
-} else {
-setTimeout(function () {
-/*
-This key/value pair is entirely arbitrary.
-Its only purpose is to be found by a condition specified in the Branch dashboard.
-*/
-branch.track('pageview', {
-'delay': '10'
-});
-}, 1000);
-}
-});
-}, 10000);
+	  setTimeout(showBanner, 10000);
 	
     var utmcampaign = new URL(window.location.href).searchParams.get("utm_campaign");
     var utmmedium = new URL(window.location.href).searchParams.get("utm_medium");
@@ -89,6 +73,9 @@ var linkData = {
 
 	  }
 
+function showBanner() {
+	branch.track('pageview', {'delay': '10'});
+}
 
 // Set Branch Deep Link data dynamically for a given mobile web Journey
 branch.setBranchViewData(linkData);
@@ -98,7 +85,7 @@ branch.setBranchViewData(linkData);
 	</script>
 </head>
 <body>
-<h1>Test Journey Attribution 21-04-26 | 1.0</h1>
+<h1>Test Journey Attribution 21-04-26 | 1.1</h1>
 <p>GitHub Pages.</p>
 	  <a href="targetaustraliaapp://open?id=123">Open Target Android App</a>
 		<a href="targetaustralia://open?id=123">Open Target IOS App</a>
