@@ -17,10 +17,8 @@ var isWebView = isiOSWebView || isAndroidWebView;
 	
 	branch.setRequestMetaData("metakey","test value");
     // init Branch
-    branch.init('key_live_jl1s6ftuDpPrMM1uN6Dekacgqshcyl2S',  { 'no_journeys': true });
+    branch.init('key_test_diWx1lFEsdTuOT4uVZvgtkcdwqhkEi5Z');
 
-	  setTimeout(showBanner, 10000);
-	
     var utmcampaign = new URL(window.location.href).searchParams.get("utm_campaign");
     var utmmedium = new URL(window.location.href).searchParams.get("utm_medium");
     var utmsource = new URL(window.location.href).searchParams.get("utm_source");
