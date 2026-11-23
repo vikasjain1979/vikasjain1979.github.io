@@ -1,82 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Links 23/11 - 1.0 </title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-      text-align: center;
-    }
-    .button-container {
-      display: flex;
-      gap: 20px;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      text-decoration: none;
-      color: white;
-      background-color: #007BFF;
-      border: 1px solid #007BFF;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      cursor: pointer;
-    }
-    .button:hover {
-      background-color: #0056b3;
-      transform: translateY(-2px);
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Contact Support</title>
 </head>
-
-  
 <body>
-<h1> Links Test 23/11 - 1.1 </h1>
-    <div class="button-container">
-      <a href="https://www.google.com" class="button">DeepLink for Android</a>
-      <a href="https://branchexplore.test-app.link/9YYTrnIsJCb" class="button" id="iosButton">Coles App</a>
-  </div> 
+  <p>Opening your email app...</p>
+  <a id="fallback-link" href="mailto:support@example.com?subject=Dashboard%20Update&body=Hi%20team,">
+    Click here if your email app didn't open automatically
+  </a>
 
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-
-    const appScheme = "branchexplore://";
-    const webPath = "https://help.branch.io/";
-  
-    const deeplinkPath = urlParams.has('$deeplink_path') ? urlParams.get('$deeplink_path') : appScheme;
-    const fallbackUrl = urlParams.has('$fallback_url') ? urlParams.get('$fallback_url') : webPath;
-    
-  document.addEventListener('DOMContentLoaded', function() {    
-      //openUriScheme(deeplinkPath, fallbackUrl);
-    const mailtoUrl = `mailto:jp_enquiries@singlife.com?subject=%E5%A4%96%E5%9B%BD%E4%BA%BA%E5%90%91%E3%81%91Singlife%20Shield%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B&body=Singlife%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E5%AE%9B%0A%0A%E3%81%8A%E4%B8%96%E8%A9%B1%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E5%A4%96%E5%9B%BD%E4%BA%BA%E5%90%91%E3%81%91%E3%81%AESinglife%20Shield%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E4%BB%A5%E4%B8%8B%E3%81%AE%E7%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%94%E7%A2%BA%E8%AA%8D%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E3%80%90%E7%A2%BA%E8%AA%8D%E4%BA%8B%E9%A0%85%E3%80%91%0A%E3%83%BB%0A%E3%83%BB%0A%0A%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82`;
-    alert(mailtoUrl);
-  window.location.href = mailtoUrl;
-  });
-
-  function openUriScheme(uri, fallback) {
-  // Set the window location to the custom URI scheme
-  window.location.href = uri;
-
-    const loadTimeout = setTimeout(function() {
-    // If the browser hasn't navigated away, the app likely isn't installed.
-    // Logic here might be to redirect the user to the App Store or Play Store.
-    console.log("App did not launch or timed out. Consider redirection.");
-      window.location.href = fallback;
-    // Example: window.location.href = 'https://appstore.com/yourapp';
-  }, 500);
-}
-  
-  
-</script>
-
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const mailtoUrl = document.getElementById("fallback-link").href;
+      
+      // Attempt automatic launch (works in some desktop browsers/webviews, blocked in others)
+      window.location.href = mailtoUrl;
+    });
+  </script>
 </body>
 </html>
