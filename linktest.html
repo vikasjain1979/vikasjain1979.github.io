@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Support</title>
+  <title>Contact Support - 1.1 </title>
 </head>
 <body>
   <p>Opening your email app...</p>
-  <a id="fallback-link" href="mailto:support@example.com?subject=Dashboard%20Update&body=Hi%20team,">
-    Click here if your email app didn't open automatically
-  </a>
+  <!-- Best & most reliable: A standard styled link -->
+<a href="mailto:support@example.com?subject=Dashboard%20Update&body=Hi%20team," class="btn">
+  Compose Email
+</a>
 
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       const mailtoUrl = document.getElementById("fallback-link").href;
       
       // Attempt automatic launch (works in some desktop browsers/webviews, blocked in others)
-      window.location.href = mailtoUrl;
+      //window.location.href = mailtoUrl;
     });
   </script>
 </body>
