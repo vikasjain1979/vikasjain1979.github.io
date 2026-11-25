@@ -17,9 +17,9 @@
   <script>
     window.addEventListener("DOMContentLoaded", () => {
       const mailtoUrl = document.getElementById("fallback-link").href;
-      
+      alert(mailtoUrl);
       // Attempt automatic launch (works in some desktop browsers/webviews, blocked in others)
-      window.location.href = mailtoUrl;
+      window.location.href = "mailto:support@example.com?subject=Dashboard%20Update&body=Hi%20team,";
     });
   </script>
 </body>
